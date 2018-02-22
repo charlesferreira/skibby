@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Skibby deseja ter acesso à sua localização</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Skibby deseja ter acesso à sua localização</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Skibby deseja ter acesso à sua localização</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Skibby deseja ter acesso à sua localização</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
