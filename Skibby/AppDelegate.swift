@@ -17,8 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+        signInAnonymously()
         
         return true
+    }
+    
+    // autentica o usuário configura a instância compartilhada
+    func signInAnonymously() {
+        Auth.auth().signInAnonymously { (user, error) in
+            guard error == nil, let user = user else {
+                fatalError("Não foi possível autenticar anonimamente: \(error!)")
+            }
+            
+            User.configure(id: user.uid)
+        }
     }
 
 }
