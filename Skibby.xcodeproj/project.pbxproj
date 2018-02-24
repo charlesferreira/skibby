@@ -8,40 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		560EB4C3203F94E200259229 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560EB4C2203F94E200259229 /* ComposeMessageViewController.swift */; };
+		560EB4C52040AB0C00259229 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560EB4C42040AB0C00259229 /* MapViewController.swift */; };
+		566347752040F11B00DCDB1F /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566347742040F11B00DCDB1F /* MessagesViewController.swift */; };
+		56634777204122AF00DCDB1F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56634776204122AF00DCDB1F /* LocationService.swift */; };
 		56AE6339203F48B500BFF979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE6338203F48B500BFF979 /* AppDelegate.swift */; };
-		56AE633B203F48B500BFF979 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE633A203F48B500BFF979 /* TabBarController.swift */; };
 		56AE633E203F48B500BFF979 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AE633C203F48B500BFF979 /* Main.storyboard */; };
 		56AE6340203F48B500BFF979 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56AE633F203F48B500BFF979 /* Assets.xcassets */; };
 		56AE6343203F48B500BFF979 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AE6341203F48B500BFF979 /* LaunchScreen.storyboard */; };
 		56AE634B203F505F00BFF979 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56AE634A203F505F00BFF979 /* GoogleService-Info.plist */; };
 		56AE634E203F605D00BFF979 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AE634D203F605D00BFF979 /* CoreLocation.framework */; };
-		56AE6350203F606400BFF979 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AE634F203F606400BFF979 /* MapKit.framework */; };
 		56AE6352203F61A400BFF979 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE6351203F61A400BFF979 /* Constants.swift */; };
 		56AE6354203F7E1D00BFF979 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE6353203F7E1D00BFF979 /* User.swift */; };
-		56C29D89203F88F70060ADE3 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C29D88203F88F70060ADE3 /* MessageViewModel.swift */; };
 		56C29D8B203F89160060ADE3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C29D8A203F89160060ADE3 /* Message.swift */; };
 		56C29D92203F8CA40060ADE3 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C29D91203F8CA40060ADE3 /* Errors.swift */; };
+		56D3183C2041DF7300DCAC36 /* volta-na-quadra.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 56D3183B2041DF7200DCAC36 /* volta-na-quadra.gpx */; };
 		ECFC633A64E6109980C1C490 /* Pods_Skibby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF41C94F85DB1D1ACAB13825 /* Pods_Skibby.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4A2C6EB27F5C5A6F55579C84 /* Pods-Skibby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skibby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Skibby/Pods-Skibby.debug.xcconfig"; sourceTree = "<group>"; };
 		560EB4C2203F94E200259229 /* ComposeMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeMessageViewController.swift; sourceTree = "<group>"; };
+		560EB4C42040AB0C00259229 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		566347742040F11B00DCDB1F /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		56634776204122AF00DCDB1F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		56AE6335203F48B500BFF979 /* Skibby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skibby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56AE6338203F48B500BFF979 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		56AE633A203F48B500BFF979 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		56AE633D203F48B500BFF979 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		56AE633F203F48B500BFF979 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56AE6342203F48B500BFF979 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56AE6344203F48B500BFF979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56AE634A203F505F00BFF979 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AE634D203F605D00BFF979 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		56AE634F203F606400BFF979 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		56AE6351203F61A400BFF979 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		56AE6353203F7E1D00BFF979 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		56C29D88203F88F70060ADE3 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		56C29D8A203F89160060ADE3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		56C29D91203F8CA40060ADE3 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		56D3183B2041DF7200DCAC36 /* volta-na-quadra.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "volta-na-quadra.gpx"; sourceTree = "<group>"; };
 		939D1A07BE0C87603F3CC4F6 /* Pods-Skibby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skibby.release.xcconfig"; path = "Pods/Target Support Files/Pods-Skibby/Pods-Skibby.release.xcconfig"; sourceTree = "<group>"; };
 		CF41C94F85DB1D1ACAB13825 /* Pods_Skibby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skibby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -51,7 +53,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56AE6350203F606400BFF979 /* MapKit.framework in Frameworks */,
 				56AE634E203F605D00BFF979 /* CoreLocation.framework in Frameworks */,
 				ECFC633A64E6109980C1C490 /* Pods_Skibby.framework in Frameworks */,
 			);
@@ -72,7 +73,6 @@
 		4DC2A45C1C0A9097AD95D1E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				56AE634F203F606400BFF979 /* MapKit.framework */,
 				56AE634D203F605D00BFF979 /* CoreLocation.framework */,
 				CF41C94F85DB1D1ACAB13825 /* Pods_Skibby.framework */,
 			);
@@ -100,47 +100,47 @@
 		56AE6337203F48B500BFF979 /* Skibby */ = {
 			isa = PBXGroup;
 			children = (
-				56AE6338203F48B500BFF979 /* AppDelegate.swift */,
 				56AE633F203F48B500BFF979 /* Assets.xcassets */,
+				56AE6338203F48B500BFF979 /* AppDelegate.swift */,
 				56C29D90203F8C410060ADE3 /* Config */,
-				56C29D85203F887A0060ADE3 /* Model */,
-				56C29D87203F88940060ADE3 /* ViewModel */,
-				56C29D86203F888C0060ADE3 /* View */,
+				56C29D8F203F8C060060ADE3 /* Controllers */,
+				56C29D85203F887A0060ADE3 /* Models */,
+				56B99CB42040D8B900200724 /* Services */,
+				56C29D86203F888C0060ADE3 /* Views */,
 			);
 			path = Skibby;
 			sourceTree = "<group>";
 		};
-		56C29D85203F887A0060ADE3 /* Model */ = {
+		56B99CB42040D8B900200724 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				56634776204122AF00DCDB1F /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		56C29D85203F887A0060ADE3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				56AE6353203F7E1D00BFF979 /* User.swift */,
 				56C29D8A203F89160060ADE3 /* Message.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		56C29D86203F888C0060ADE3 /* View */ = {
+		56C29D86203F888C0060ADE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				56C29D8F203F8C060060ADE3 /* Controllers */,
 				56C29D8E203F8C000060ADE3 /* Storyboards */,
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		56C29D87203F88940060ADE3 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				56C29D88203F88F70060ADE3 /* MessageViewModel.swift */,
-			);
-			path = ViewModel;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		56C29D8E203F8C000060ADE3 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				56AE6341203F48B500BFF979 /* LaunchScreen.storyboard */,
 				56AE633C203F48B500BFF979 /* Main.storyboard */,
+				56AE6341203F48B500BFF979 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -148,8 +148,9 @@
 		56C29D8F203F8C060060ADE3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				56AE633A203F48B500BFF979 /* TabBarController.swift */,
 				560EB4C2203F94E200259229 /* ComposeMessageViewController.swift */,
+				560EB4C42040AB0C00259229 /* MapViewController.swift */,
+				566347742040F11B00DCDB1F /* MessagesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -157,6 +158,7 @@
 		56C29D90203F8C410060ADE3 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				56D3183B2041DF7200DCAC36 /* volta-na-quadra.gpx */,
 				56AE634A203F505F00BFF979 /* GoogleService-Info.plist */,
 				56AE6344203F48B500BFF979 /* Info.plist */,
 				56AE6351203F61A400BFF979 /* Constants.swift */,
@@ -201,6 +203,11 @@
 					56AE6334203F48B500BFF979 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -229,6 +236,7 @@
 			files = (
 				56AE634B203F505F00BFF979 /* GoogleService-Info.plist in Resources */,
 				56AE6343203F48B500BFF979 /* LaunchScreen.storyboard in Resources */,
+				56D3183C2041DF7300DCAC36 /* volta-na-quadra.gpx in Resources */,
 				56AE6340203F48B500BFF979 /* Assets.xcassets in Resources */,
 				56AE633E203F48B500BFF979 /* Main.storyboard in Resources */,
 			);
@@ -247,6 +255,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GeoFire/GeoFire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -255,6 +264,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GeoFire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -303,10 +313,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				566347752040F11B00DCDB1F /* MessagesViewController.swift in Sources */,
 				56AE6354203F7E1D00BFF979 /* User.swift in Sources */,
-				56AE633B203F48B500BFF979 /* TabBarController.swift in Sources */,
-				56C29D89203F88F70060ADE3 /* MessageViewModel.swift in Sources */,
 				560EB4C3203F94E200259229 /* ComposeMessageViewController.swift in Sources */,
+				56634777204122AF00DCDB1F /* LocationService.swift in Sources */,
+				560EB4C52040AB0C00259229 /* MapViewController.swift in Sources */,
 				56C29D8B203F89160060ADE3 /* Message.swift in Sources */,
 				56C29D92203F8CA40060ADE3 /* Errors.swift in Sources */,
 				56AE6339203F48B500BFF979 /* AppDelegate.swift in Sources */,

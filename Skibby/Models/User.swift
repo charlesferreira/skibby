@@ -6,14 +6,12 @@
 //  Copyright © 2018 Charles Ferreira. All rights reserved.
 //
 
+import CoreLocation
+
 struct User {
     
-    private (set) static var shared: User!
+    static var shared = User()
     
-    var id: String
-    
-    static func configure(id: String) {
-        shared = User(id: id)
-    }
+    var id: String? = ""
     
 }
