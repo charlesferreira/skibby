@@ -10,6 +10,7 @@ import MapKit
 
 struct Constants {
     
+    static let userDefaults = UserDefaults()
     static let location = Location()
     static let geoFire = GeoFire()
     static let messages = Messages()
@@ -19,22 +20,28 @@ struct Constants {
 
 extension Constants {
     
+    struct UserDefaults {
+        let keyForUID      = "uid"
+        let keyForMessages = "messages"
+    }
+    
     struct Location {
-        let desiredAccuracy: CLLocationAccuracy     = kCLLocationAccuracyNearestTenMeters
-        let distanceFilter: CLLocationDistance      = 50  // in meters
+//        let desiredAccuracy: CLLocationAccuracy = kCLLocationAccuracyNearestTenMeters
+        let desiredAccuracy: CLLocationAccuracy = kCLLocationAccuracyBest
+        let distanceFilter: CLLocationDistance = 5 // in meters
         let initialZoomDistance: CLLocationDistance = 500 // in meters
     }
     
     struct GeoFire {
-        let path: String            = "geofire"       //
-        let visibleRadius: Double   = 0.6             // in kilometers
-        let reachableRadius: Double = 0.05            // in kilometers
+        let path: String = "geofire"
+        let visibleRadius: Double = 0.2 // in kilometers
+        let collectRadius: Double = 0.025 // in kilometers
     }
     
     struct Messages {
-        let allMessagesPath: String    = "messages"
+        let allMessagesPath: String = "messages"
         var userMessagesPath: String {
-            guard let uid = User.shared.id else {
+            guard let uid = UserManager.sharedManager().uid else {
                 fatalError(Errors.user.idNotSet)
             }
             return "users/\(uid)/messages"

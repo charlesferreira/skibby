@@ -11,8 +11,6 @@ import CoreLocation
 
 class MessagesViewController: UITableViewController {
     
-    let locationManager = CLLocationManager()
-    
     @IBAction func composeMessageTapped(_ sender: Any) {
         let alert = UIAlertController(title: "Nova Mensagem", message: nil, preferredStyle: .actionSheet)
         
@@ -30,7 +28,7 @@ class MessagesViewController: UITableViewController {
     }
     
     private func composeMessage() {
-        guard let location = locationManager.location else { return }
+        guard let location = GeoManager.sharedManager().location else { return }
         
         guard let controller = storyboard?.instantiateViewController(withIdentifier: "ComposeMessageViewController") as? ComposeMessageViewController else { return }
         

@@ -11,7 +11,7 @@ import CoreLocation
 
 class ComposeMessageViewController: UIViewController {
     
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textField: UITextField!
     
     var location: CLLocation!
     
@@ -20,8 +20,8 @@ class ComposeMessageViewController: UIViewController {
     }
     
     @IBAction func sendTapped(_ sender: Any) {
-        guard let senderID = User.shared.id,
-            let text = textView.text else { return }
+        guard let senderID = UserManager.sharedManager().uid,
+            let text = textField.text else { return }
         
         var message = Message(id: nil, senderID: senderID, text: text)
         message.save(at: location)

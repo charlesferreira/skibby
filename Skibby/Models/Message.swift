@@ -24,6 +24,14 @@ struct Message {
         return values
     }
     
+    static func createFromSnapshot(_ snapshot: DataSnapshot) -> Message {
+        let value = snapshot.value as? NSDictionary
+        let id = snapshot.key
+        let senderID = value?["senderID"] as? String ?? ""
+        let text = value?["text"] as? String ?? ""
+        return Message(id: id, senderID: senderID, text: text)
+    }
+    
     mutating func save(at location: CLLocation) {
         saveToFirebase()
         saveToUserMessages()

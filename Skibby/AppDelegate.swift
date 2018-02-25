@@ -7,62 +7,43 @@
 //
 
 import UIKit
+import GeoFire
 import Firebase
 import CoreLocation
-import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var geoMailer = GeoMailer()
-    var locationManager = CLLocationManager()
+    var geoFence: GeoFence!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        signInAnonymously()
-        setUpLocationManager()
-        
-        IQKeyboardManager.sharedManager().enable = true
-        IQKeyboardManager.sharedManager().enableAutoToolbar = false
+        UserManager.sharedManager().logIn()
+        setUpGeoFence()
         
         return true
     }
     
-    private func signInAnonymously() {
-        Auth.auth().signInAnonymously { (user, error) in
-            guard error == nil, let user = user else {
-                fatalError(Errors.firebase.didFailToSignIn(with: error))
-            }
-            
-            User.shared.id = user.uid
-        }
-    }
-    
-    private func setUpLocationManager() {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = Constants.location.desiredAccuracy
-        locationManager.distanceFilter = Constants.location.distanceFilter
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-        print("Pediu localização")
+    private func setUpGeoFence() {
+        geoFence = GeoFence(radius: Constants.geoFire.collectRadius)
+        geoFence.delegate = self
     }
 }
 
-extension AppDelegate: CLLocationManagerDelegate {
+extension AppDelegate: GeoFenceDelegate {
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Atualizou localização")
-        
-        guard let location = locations.first else { return }
-        
-        geoMailer.updateUserLocation(location)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(Errors.location.didFail(with: error))
+    func geoFence(_ geoFence: GeoFence, didSetUpQuery query: GFCircleQuery) {
+        query.observe(.keyEntered) { (key, _) in
+            let manager = MessagesManager.sharedManager()
+            manager.loadMessage(identifiedBy: key, completion: { (message) in
+                UserManager.sharedManager().collect(message)
+            })
+        }
     }
 }
+
+
 
