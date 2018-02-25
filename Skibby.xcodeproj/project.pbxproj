@@ -26,6 +26,7 @@
 		56C29D92203F8CA40060ADE3 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C29D91203F8CA40060ADE3 /* Errors.swift */; };
 		56C8BAFB2042791C00212AFA /* MessageAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8BAFA2042791C00212AFA /* MessageAnnotation.swift */; };
 		56C8BAFE2043017B00212AFA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8BAFD2043017B00212AFA /* TabBarController.swift */; };
+		56C8BB00204348A600212AFA /* ComposeMessageViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8BAFF204348A600212AFA /* ComposeMessageViewController+ImagePicker.swift */; };
 		56D3183C2041DF7300DCAC36 /* VoltaNaQuadra.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 56D3183B2041DF7200DCAC36 /* VoltaNaQuadra.gpx */; };
 		ECFC633A64E6109980C1C490 /* Pods_Skibby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF41C94F85DB1D1ACAB13825 /* Pods_Skibby.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		56C8BAFA2042791C00212AFA /* MessageAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAnnotation.swift; sourceTree = "<group>"; };
 		56C8BAFC204283E800212AFA /* ZigZag.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ZigZag.gpx; sourceTree = "<group>"; };
 		56C8BAFD2043017B00212AFA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		56C8BAFF204348A600212AFA /* ComposeMessageViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposeMessageViewController+ImagePicker.swift"; sourceTree = "<group>"; };
 		56D3183B2041DF7200DCAC36 /* VoltaNaQuadra.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VoltaNaQuadra.gpx; sourceTree = "<group>"; };
 		939D1A07BE0C87603F3CC4F6 /* Pods-Skibby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skibby.release.xcconfig"; path = "Pods/Target Support Files/Pods-Skibby/Pods-Skibby.release.xcconfig"; sourceTree = "<group>"; };
 		CF41C94F85DB1D1ACAB13825 /* Pods_Skibby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skibby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				560EB4C2203F94E200259229 /* ComposeMessageViewController.swift */,
+				56C8BAFF204348A600212AFA /* ComposeMessageViewController+ImagePicker.swift */,
 				560EB4C42040AB0C00259229 /* MapViewController.swift */,
 				566347742040F11B00DCDB1F /* MessagesViewController.swift */,
 				56C8BAFD2043017B00212AFA /* TabBarController.swift */,
@@ -355,6 +358,7 @@
 				56C29D92203F8CA40060ADE3 /* Errors.swift in Sources */,
 				5600B492204261690087FA4D /* MessagesManager.swift in Sources */,
 				5638407920422B2F00797C9E /* GeoFence.swift in Sources */,
+				56C8BB00204348A600212AFA /* ComposeMessageViewController+ImagePicker.swift in Sources */,
 				5600B48C204231280087FA4D /* GeoManager.swift in Sources */,
 				56AE6339203F48B500BFF979 /* AppDelegate.swift in Sources */,
 				56C8BAFE2043017B00212AFA /* TabBarController.swift in Sources */,

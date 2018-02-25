@@ -12,6 +12,7 @@ import GrowingTextView
 
 class ComposeMessageViewController: UIViewController {
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var warningButton: UIView!
     @IBOutlet weak var previewLabel: UILabel!
     @IBOutlet weak var textView: GrowingTextView!
@@ -31,6 +32,7 @@ class ComposeMessageViewController: UIViewController {
     
     private func setUpWarningButton() {
         warningButton.layer.cornerRadius = warningButton.frame.height / 2
+        warningButton.isHidden = true
     }
     
     private func setUpTextView() {
@@ -62,18 +64,23 @@ class ComposeMessageViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func selectImageTapped(_ sender: Any) {
+        beginImageSelection()
+    }
+    
     @IBAction func sendTapped(_ sender: Any) {
         guard let senderID = UserManager.sharedManager().uid,
             let text = textView.text else { return }
 
-        var message = Message(id: nil, senderID: senderID, text: text)
+        let isNSFW = !warningButton.isHidden
+        var message = Message(id: nil, senderID: senderID, isNSFW: isNSFW, text: text)
         message.save(at: location)
 
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func warningTapped(_ sender: Any) {
-        let alertController = UIAlertController(title: "Alerta de conteúdo explícito", message: "Sua mensagem poderá não ser exibida para todos os usuários.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Alerta de conteúdo explícito", message: "A imagem selecionada parece conter conteúdo explícito e, portanto, não será exibida para alguns usuários.", preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "Entendi", style: .cancel, handler: nil))
         

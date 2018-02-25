@@ -2,14 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Para criar imagens de fundo para suas mensagens.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Para criar imagens de fundo para suas mensagens.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Skibby deseja ter acesso à sua localização</string>
+	<string>Para você poder coletar as mensagens por onde passar ;)</string>
 	<key>NSLocationUsageDescription</key>
-	<string>Skibby deseja ter acesso à sua localização</string>
+	<string>Para você poder coletar as mensagens por onde passar ;)</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Skibby deseja ter acesso à sua localização</string>
+	<string>Para você poder coletar as mensagens por onde passar ;)</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Skibby deseja ter acesso à sua localização</string>
+	<string>Para você poder coletar as mensagens por onde passar ;)</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
