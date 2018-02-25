@@ -10,11 +10,12 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
+    @IBInspectable var initialIndex: Int = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // inicia no mapa
-        selectedIndex = 1
+        selectedIndex = initialIndex
     }
     
 }
