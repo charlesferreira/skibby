@@ -27,6 +27,9 @@
 		56C8BAFB2042791C00212AFA /* MessageAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8BAFA2042791C00212AFA /* MessageAnnotation.swift */; };
 		56C8BAFE2043017B00212AFA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8BAFD2043017B00212AFA /* TabBarController.swift */; };
 		56C8BB00204348A600212AFA /* ComposeMessageViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8BAFF204348A600212AFA /* ComposeMessageViewController+ImagePicker.swift */; };
+		56C8BB02204365B900212AFA /* Nudity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 56C8BB01204365B800212AFA /* Nudity.mlmodel */; };
+		56C8BB042043672D00212AFA /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8BB032043672D00212AFA /* ImageProcessor.swift */; };
+		56C8BB0720436BB900212AFA /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8BB0620436BB900212AFA /* UIImage.swift */; };
 		56D3183C2041DF7300DCAC36 /* VoltaNaQuadra.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 56D3183B2041DF7200DCAC36 /* VoltaNaQuadra.gpx */; };
 		ECFC633A64E6109980C1C490 /* Pods_Skibby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF41C94F85DB1D1ACAB13825 /* Pods_Skibby.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,9 @@
 		56C8BAFC204283E800212AFA /* ZigZag.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ZigZag.gpx; sourceTree = "<group>"; };
 		56C8BAFD2043017B00212AFA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		56C8BAFF204348A600212AFA /* ComposeMessageViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposeMessageViewController+ImagePicker.swift"; sourceTree = "<group>"; };
+		56C8BB01204365B800212AFA /* Nudity.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Nudity.mlmodel; sourceTree = "<group>"; };
+		56C8BB032043672D00212AFA /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
+		56C8BB0620436BB900212AFA /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		56D3183B2041DF7200DCAC36 /* VoltaNaQuadra.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VoltaNaQuadra.gpx; sourceTree = "<group>"; };
 		939D1A07BE0C87603F3CC4F6 /* Pods-Skibby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skibby.release.xcconfig"; path = "Pods/Target Support Files/Pods-Skibby/Pods-Skibby.release.xcconfig"; sourceTree = "<group>"; };
 		CF41C94F85DB1D1ACAB13825 /* Pods_Skibby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skibby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				5600B48E204247940087FA4D /* WeakReference.swift */,
+				56C8BB032043672D00212AFA /* ImageProcessor.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -125,6 +132,7 @@
 				56AE6338203F48B500BFF979 /* AppDelegate.swift */,
 				56C29D90203F8C410060ADE3 /* Config */,
 				56C29D8F203F8C060060ADE3 /* Controllers */,
+				56C8BB0520436BAA00212AFA /* Extensions */,
 				56C29D85203F887A0060ADE3 /* Models */,
 				56C29D86203F888C0060ADE3 /* Views */,
 				56B99CB42040D8B900200724 /* Services */,
@@ -189,6 +197,7 @@
 				56AE6344203F48B500BFF979 /* Info.plist */,
 				56AE6351203F61A400BFF979 /* Constants.swift */,
 				56C29D91203F8CA40060ADE3 /* Errors.swift */,
+				56C8BB01204365B800212AFA /* Nudity.mlmodel */,
 				56D3183B2041DF7200DCAC36 /* VoltaNaQuadra.gpx */,
 				56C8BAFC204283E800212AFA /* ZigZag.gpx */,
 			);
@@ -201,6 +210,14 @@
 				56C8BAFA2042791C00212AFA /* MessageAnnotation.swift */,
 			);
 			path = Annotations;
+			sourceTree = "<group>";
+		};
+		56C8BB0520436BAA00212AFA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				56C8BB0620436BB900212AFA /* UIImage.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +369,7 @@
 				566347752040F11B00DCDB1F /* MessagesViewController.swift in Sources */,
 				56AE6354203F7E1D00BFF979 /* UserManager.swift in Sources */,
 				560EB4C3203F94E200259229 /* ComposeMessageViewController.swift in Sources */,
+				56C8BB02204365B900212AFA /* Nudity.mlmodel in Sources */,
 				56C8BAFB2042791C00212AFA /* MessageAnnotation.swift in Sources */,
 				560EB4C52040AB0C00259229 /* MapViewController.swift in Sources */,
 				56C29D8B203F89160060ADE3 /* Message.swift in Sources */,
@@ -361,7 +379,9 @@
 				56C8BB00204348A600212AFA /* ComposeMessageViewController+ImagePicker.swift in Sources */,
 				5600B48C204231280087FA4D /* GeoManager.swift in Sources */,
 				56AE6339203F48B500BFF979 /* AppDelegate.swift in Sources */,
+				56C8BB042043672D00212AFA /* ImageProcessor.swift in Sources */,
 				56C8BAFE2043017B00212AFA /* TabBarController.swift in Sources */,
+				56C8BB0720436BB900212AFA /* UIImage.swift in Sources */,
 				5600B48F204247940087FA4D /* WeakReference.swift in Sources */,
 				56AE6352203F61A400BFF979 /* Constants.swift in Sources */,
 			);

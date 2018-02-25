@@ -12,19 +12,21 @@ import CoreLocation
 class MessagesViewController: UITableViewController {
     
     @IBAction func composeMessageTapped(_ sender: Any) {
-        let alert = UIAlertController(title: "Nova Mensagem", message: nil, preferredStyle: .actionSheet)
+//        let alert = UIAlertController(title: "Nova Mensagem", message: nil, preferredStyle: .actionSheet)
+//
+//        alert.addAction(UIAlertAction(title: "No meu local atual", style: .default) { (_) in
+//            self.composeMessage()
+//        })
+//
+//        alert.addAction(UIAlertAction(title: "Selecionar local", style: .default) { (_) in
+//            print("Select location")
+//        })
+//
+//        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+//
+//        navigationController?.present(alert, animated: true, completion: nil)
         
-        alert.addAction(UIAlertAction(title: "No meu local atual", style: .default) { (_) in
-            self.composeMessage()
-        })
-        
-        alert.addAction(UIAlertAction(title: "Selecionar local", style: .default) { (_) in
-            print("Select location")
-        })
-        
-        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
-        
-        navigationController?.present(alert, animated: true, completion: nil)
+        composeMessage()
     }
     
     private func composeMessage() {

@@ -18,6 +18,8 @@ class ComposeMessageViewController: UIViewController {
     @IBOutlet weak var textView: GrowingTextView!
     @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
     
+    let nsfwModel = Nudity()
+    
     var location: CLLocation!
     
     override func viewDidLoad() {

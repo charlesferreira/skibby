@@ -10,9 +10,15 @@ import UIKit
 
 extension ComposeMessageViewController {
 
-    func filterExplicitContent(for image: UIImage) {
-        print("Filtrar conteúdo NSFW")
-        warningButton.isHidden = false
+    func filterExplicitContent(forImage image: CGImage) {
+        if let pixelBuffer = ImageProcessor.pixelBuffer(forImage: image) {
+            guard let prediction = try? nsfwModel.prediction(data: pixelBuffer) else { return }
+            print("--------")
+            print(prediction.classLabel)
+            print(prediction.prob)
+            print("--------")
+            warningButton.isHidden = prediction.classLabel == "SFW"
+        }
     }
 }
 
@@ -44,7 +50,9 @@ extension ComposeMessageViewController: UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             backgroundImageView.image = image
-            filterExplicitContent(for: image)
+            if let cgImage = image.stretched(width: 224, height: 224)?.cgImage {
+                filterExplicitContent(forImage: cgImage)
+            }
         }
         
         picker.dismiss(animated: true, completion: nil)
