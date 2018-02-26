@@ -25,6 +25,14 @@ class MessageTableViewCell: UITableViewCell {
             return
         }
         
+        // não lida
+        let newMessages = UserManager.sharedManager().newCollectedMessages
+        if newMessages.contains(message.id!) {
+            contentView.backgroundColor = UIColor(hue: 0.55, saturation: 0.075, brightness: 1, alpha: 1)
+        } else {
+            contentView.backgroundColor = UIColor.white
+        }
+        
         thumbnail.layer.cornerRadius = thumbnail.frame.size.height / 2
         FileStore.sharedManager().thumbnail(forKey: message.id!) { (image, error) in
             if let image = image {
