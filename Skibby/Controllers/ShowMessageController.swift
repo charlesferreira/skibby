@@ -18,8 +18,8 @@ class ShowMessageController: UIViewController {
     override func viewDidLoad() {
         MessagesManager.sharedManager().loadMessage(identifiedBy: messageID) { (message) in
             self.messageLabel.text = message.text
-            let filterNSFW = UserDefaults.standard.bool(forKey: Constants.userDefaults.filterNSFW)
-            if message.isNSFW && filterNSFW {
+            let showNSFW = UserDefaults.standard.bool(forKey: Constants.userDefaults.showNSFW)
+            if message.isNSFW && !showNSFW {
                 return
             }
             

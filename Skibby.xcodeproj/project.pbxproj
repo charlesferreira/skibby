@@ -12,6 +12,7 @@
 		5600B492204261690087FA4D /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5600B491204261690087FA4D /* MessagesManager.swift */; };
 		5606302520439A7400FB69F3 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5606302420439A7400FB69F3 /* Storage.swift */; };
 		560630282043A48700FB69F3 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560630272043A48700FB69F3 /* MessageTableViewCell.swift */; };
+		560A10262043DB4100075413 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560A10252043DB4100075413 /* SettingsViewController.swift */; };
 		560EB4C3203F94E200259229 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560EB4C2203F94E200259229 /* ComposeMessageViewController.swift */; };
 		560EB4C52040AB0C00259229 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560EB4C42040AB0C00259229 /* MapViewController.swift */; };
 		5638407920422B2F00797C9E /* GeoFence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5638407820422B2F00797C9E /* GeoFence.swift */; };
@@ -46,6 +47,7 @@
 		5600B491204261690087FA4D /* MessagesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MessagesManager.swift; path = Skibby/Services/MessagesManager.swift; sourceTree = SOURCE_ROOT; };
 		5606302420439A7400FB69F3 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		560630272043A48700FB69F3 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		560A10252043DB4100075413 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		560EB4C2203F94E200259229 /* ComposeMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeMessageViewController.swift; sourceTree = "<group>"; };
 		560EB4C42040AB0C00259229 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5638407820422B2F00797C9E /* GeoFence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoFence.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				566347742040F11B00DCDB1F /* MessagesViewController.swift */,
 				56C8BAFD2043017B00212AFA /* TabBarController.swift */,
 				569690282043CE2000F7468B /* ShowMessageController.swift */,
+				560A10252043DB4100075413 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				56C8BB0720436BB900212AFA /* UIImage.swift in Sources */,
 				5600B48F204247940087FA4D /* WeakReference.swift in Sources */,
 				56AE6352203F61A400BFF979 /* Constants.swift in Sources */,
+				560A10262043DB4100075413 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

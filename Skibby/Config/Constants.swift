@@ -25,7 +25,9 @@ extension Constants {
         let keyForUID         = "uid"
         let keyForAllMessages = "allMessages"
         let keyForOwnMessages = "ownMessages"
-        let filterNSFW        = "filterNSFW"
+        let showNSFW          = "showNSFW"
+        let hideOwnMessages   = "hideOwnMessages"
+        let hideCollectedMessages = "hideCollectedMessages"
     }
     
     struct Location {
