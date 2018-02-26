@@ -19,7 +19,8 @@ class UserManager {
     
     private (set) var uid: String?
     
-    private var collectedMessages = [String]()
+    private (set) var newCollectedMessages = [String]()
+    private var allCollectedMessages = [String]()
     
     static func sharedManager() -> UserManager {
         struct Static { static let instance = UserManager() }
@@ -36,9 +37,8 @@ class UserManager {
         // tenta carregar a lista de mensagens do UserDefaults
         let keyForMessages = Constants.userDefaults.keyForMessages
         if let messages = UserDefaults.standard.array(forKey: keyForMessages) as? [String] {
-            collectedMessages = messages
-            print("Carregou mensagens:")
-            print(messages)
+            //collectedMessages = messages
+            print("TODO: descomentar linha acima para carregar mensagens do UserDefaults")
         }
     }
     
@@ -60,7 +60,8 @@ class UserManager {
     func collect(_ message: Message) {
         guard canCollect(message: message) else { return }
         
-        collectedMessages.append(message.id!)
+        newCollectedMessages.append(message.id!)
+        allCollectedMessages.append(message.id!)
         updateUserDefaults()
         
         delegate?.userManager(self, didCollectMessage: message)
@@ -71,13 +72,13 @@ class UserManager {
         guard message.senderID != uid else { return false }
         
         // descarta mensagens já coletadas
-        guard let messageID = message.id, !collectedMessages.contains(messageID) else { return false }
+        guard let messageID = message.id, !allCollectedMessages.contains(messageID) else { return false }
         
         return true
     }
     
     private func updateUserDefaults() {
         let keyForMessages = Constants.userDefaults.keyForMessages
-        UserDefaults.standard.set(collectedMessages, forKey: keyForMessages)
+        UserDefaults.standard.set(allCollectedMessages, forKey: keyForMessages)
     }
 }

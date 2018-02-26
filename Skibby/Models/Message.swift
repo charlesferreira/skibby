@@ -14,6 +14,7 @@ struct Message {
     
     var id: String?
     var senderID: String
+    var hasImage: Bool
     var isNSFW: Bool
     var text: String
     
@@ -29,9 +30,10 @@ struct Message {
         let value = snapshot.value as? NSDictionary
         let id = snapshot.key
         let senderID = value?["senderID"] as? String ?? ""
+        let hasImage = value?["hasImage"] as? Bool ?? false
         let isNSFW = value?["isNSFW"] as? Bool ?? false
         let text = value?["text"] as? String ?? ""
-        return Message(id: id, senderID: senderID, isNSFW: isNSFW, text: text)
+        return Message(id: id, senderID: senderID, hasImage: hasImage, isNSFW: isNSFW, text: text)
     }
     
     mutating func save(at location: CLLocation) {

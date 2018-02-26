@@ -14,6 +14,7 @@ struct Constants {
     static let location = Location()
     static let geoFire = GeoFire()
     static let messages = Messages()
+    static let storage = Storage()
     
     private init() {}
 }
@@ -46,5 +47,17 @@ extension Constants {
             }
             return "users/\(uid)/messages"
         }
+    }
+    
+    struct Storage {
+        func messageFullSizedImagePath(forKey key: String) -> String {
+            return "messages/full-size/\(key).jpg"
+        }
+        func messageThumbnailImagePath(forKey key: String) -> String {
+            return "messages/thumbnail/\(key).jpg"
+        }
+        
+        let maxImageSize: CGSize = CGSize(width: 1024, height: 1024)
+        let thumbnailSize: CGSize = CGSize(width: 128, height: 128)
     }
 }

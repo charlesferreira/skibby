@@ -18,4 +18,11 @@ class TabBarController: UITabBarController {
         selectedIndex = initialIndex
     }
     
+    func notifyMessageCollected() {
+        if let messagesItem = tabBar.items?.first {
+            let collectedMessages = UserManager.sharedManager().newCollectedMessages
+            messagesItem.badgeValue = collectedMessages.count.description
+        }
+    }
+    
 }

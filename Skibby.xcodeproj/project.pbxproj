@@ -10,6 +10,7 @@
 		5600B48C204231280087FA4D /* GeoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5600B48B204231280087FA4D /* GeoManager.swift */; };
 		5600B48F204247940087FA4D /* WeakReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5600B48E204247940087FA4D /* WeakReference.swift */; };
 		5600B492204261690087FA4D /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5600B491204261690087FA4D /* MessagesManager.swift */; };
+		5606302520439A7400FB69F3 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5606302420439A7400FB69F3 /* Storage.swift */; };
 		560EB4C3203F94E200259229 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560EB4C2203F94E200259229 /* ComposeMessageViewController.swift */; };
 		560EB4C52040AB0C00259229 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560EB4C42040AB0C00259229 /* MapViewController.swift */; };
 		5638407920422B2F00797C9E /* GeoFence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5638407820422B2F00797C9E /* GeoFence.swift */; };
@@ -39,6 +40,7 @@
 		5600B48B204231280087FA4D /* GeoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoManager.swift; sourceTree = "<group>"; };
 		5600B48E204247940087FA4D /* WeakReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakReference.swift; sourceTree = "<group>"; };
 		5600B491204261690087FA4D /* MessagesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MessagesManager.swift; path = Skibby/Services/MessagesManager.swift; sourceTree = SOURCE_ROOT; };
+		5606302420439A7400FB69F3 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		560EB4C2203F94E200259229 /* ComposeMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeMessageViewController.swift; sourceTree = "<group>"; };
 		560EB4C42040AB0C00259229 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5638407820422B2F00797C9E /* GeoFence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoFence.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				56AE6353203F7E1D00BFF979 /* UserManager.swift */,
 				5600B48B204231280087FA4D /* GeoManager.swift */,
 				5600B491204261690087FA4D /* MessagesManager.swift */,
+				5606302420439A7400FB69F3 /* Storage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				566347752040F11B00DCDB1F /* MessagesViewController.swift in Sources */,
 				56AE6354203F7E1D00BFF979 /* UserManager.swift in Sources */,
 				560EB4C3203F94E200259229 /* ComposeMessageViewController.swift in Sources */,
+				5606302520439A7400FB69F3 /* Storage.swift in Sources */,
 				56C8BB02204365B900212AFA /* Nudity.mlmodel in Sources */,
 				56C8BAFB2042791C00212AFA /* MessageAnnotation.swift in Sources */,
 				560EB4C52040AB0C00259229 /* MapViewController.swift in Sources */,

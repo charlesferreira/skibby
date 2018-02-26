@@ -12,6 +12,7 @@ import GrowingTextView
 
 class ComposeMessageViewController: UIViewController {
     
+    @IBOutlet weak var sendButton: UIBarButtonItem!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var warningButton: UIView!
     @IBOutlet weak var previewLabel: UILabel!
@@ -21,11 +22,14 @@ class ComposeMessageViewController: UIViewController {
     let nsfwModel = Nudity()
     
     var location: CLLocation!
+    var hasSelectedImage: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTextView()
         setUpWarningButton()
+        updateSendButton()
+        hasSelectedImage = false
     }
     
     deinit {
@@ -75,8 +79,13 @@ class ComposeMessageViewController: UIViewController {
             let text = textView.text else { return }
 
         let isNSFW = !warningButton.isHidden
-        var message = Message(id: nil, senderID: senderID, isNSFW: isNSFW, text: text)
+        var message = Message(id: nil, senderID: senderID, hasImage: hasSelectedImage, isNSFW: isNSFW, text: text)
         message.save(at: location)
+        
+        if hasSelectedImage, let messageID = message.id {
+            let image = backgroundImageView.image!
+            FileStore.sharedManager().upload(image: image, forKey: messageID)
+        }
 
         navigationController?.popViewController(animated: true)
     }
@@ -87,6 +96,10 @@ class ComposeMessageViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Entendi", style: .cancel, handler: nil))
         
         navigationController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    func updateSendButton() {
+        sendButton.isEnabled = !textView.text.isEmpty
     }
 }
 
@@ -100,6 +113,7 @@ extension ComposeMessageViewController: GrowingTextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         previewLabel.text = textView.text
+        updateSendButton()
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

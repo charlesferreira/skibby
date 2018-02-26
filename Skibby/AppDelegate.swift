@@ -38,8 +38,11 @@ extension AppDelegate: GeoFenceDelegate {
     func geoFence(_ geoFence: GeoFence, didSetUpQuery query: GFCircleQuery) {
         query.observe(.keyEntered) { (key, _) in
             let manager = MessagesManager.sharedManager()
-            manager.loadMessage(identifiedBy: key, completion: { (message) in
+            manager.loadMessage(identifiedBy: key, completion: { [weak self] (message) in
                 UserManager.sharedManager().collect(message)
+                if let controller = self?.window?.rootViewController as? TabBarController {
+                    controller.notifyMessageCollected()
+                }
             })
         }
     }
