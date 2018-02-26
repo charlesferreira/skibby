@@ -18,12 +18,6 @@ class MessageTableViewCell: UITableViewCell {
         // labels
         messageLabel.text = message.text
         dateDiffLabel.text = date.diffForHumans()
-    
-        // thumbnail
-        guard !message.isNSFW || UserDefaults.standard.bool(forKey: Constants.userDefaults.showNSFW) else {
-            self.thumbnail.image = #imageLiteral(resourceName: "message-thumbnail-example")
-            return
-        }
         
         // não lida
         let newMessages = UserManager.sharedManager().newCollectedMessages
@@ -31,6 +25,12 @@ class MessageTableViewCell: UITableViewCell {
             contentView.backgroundColor = UIColor(hue: 0.55, saturation: 0.075, brightness: 1, alpha: 1)
         } else {
             contentView.backgroundColor = UIColor.white
+        }
+        
+        // thumbnail
+        guard !message.isNSFW || UserDefaults.standard.bool(forKey: Constants.userDefaults.showNSFW) else {
+            self.thumbnail.image = #imageLiteral(resourceName: "message-thumbnail-example")
+            return
         }
         
         thumbnail.layer.cornerRadius = thumbnail.frame.size.height / 2
