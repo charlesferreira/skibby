@@ -24,7 +24,19 @@ class TabBarController: UITabBarController {
         selectedIndex = initialIndex
     }
     
+    func markAsRead(messageID: String) {
+        let manager = UserManager.sharedManager()
+        if manager.newCollectedMessages.contains(messageID) {
+            manager.markAsRead(messageID: messageID)
+            updateMessagesBadge()
+        }
+    }
+    
     func notifyMessageCollected() {
+        updateMessagesBadge()
+    }
+    
+    private func updateMessagesBadge() {
         if let messagesItem = tabBar.items?.first {
             let count = UserManager.sharedManager().newCollectedMessages.count
             messagesItem.badgeValue = count > 0 ? count.description : nil

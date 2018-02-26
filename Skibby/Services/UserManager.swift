@@ -35,11 +35,16 @@ class UserManager {
             self.uid = uid
         }
         
+        // tenta carregar a lista de mensagens não lidas
+        let keyForNewMessages = Constants.userDefaults.keyForNewMessages
+        if let messages = UserDefaults.standard.array(forKey: keyForNewMessages) as? [String] {
+            newCollectedMessages = messages
+        }
+        
         // tenta carregar a lista de mensagens do UserDefaults
         let keyForAllMessages = Constants.userDefaults.keyForAllMessages
         if let messages = UserDefaults.standard.dictionary(forKey: keyForAllMessages) as? [String: Date] {
-            //collectedMessages = messages
-            print("TODO: descomentar linha acima para carregar mensagens do UserDefaults")
+            allCollectedMessages = messages
         }
         
         // tenta carregar a lista de mensagens do UserDefaults
@@ -71,10 +76,19 @@ class UserManager {
         }
     }
     
+    func markAsRead(messageID: String) {
+        print(newCollectedMessages.count)
+        newCollectedMessages = newCollectedMessages.filter { $0 != messageID }
+        print(newCollectedMessages.count)
+    }
+    
     func collect(_ message: Message) -> Bool {
         guard canCollect(message: message) else { return false }
         
-        newCollectedMessages.append(message.id!)
+        // marca a nova mensagem como não lida
+        if !newCollectedMessages.contains(message.id!) {
+            newCollectedMessages.append(message.id!)
+        }
         allCollectedMessages[message.id!] = Date()
         updateUserDefaults()
         
@@ -96,9 +110,13 @@ class UserManager {
     }
     
     private func updateUserDefaults() {
-        let keyForAllMessages = Constants.userDefaults.keyForAllMessages
         let keyForOwnMessages = Constants.userDefaults.keyForOwnMessages
-        UserDefaults.standard.set(allCollectedMessages, forKey: keyForAllMessages)
         UserDefaults.standard.set(ownMessages, forKey: keyForOwnMessages)
+        
+        let keyForAllMessages = Constants.userDefaults.keyForAllMessages
+        UserDefaults.standard.set(allCollectedMessages, forKey: keyForAllMessages)
+        
+        let keyForNewMessages = Constants.userDefaults.keyForNewMessages
+        UserDefaults.standard.set(newCollectedMessages, forKey: keyForNewMessages)
     }
 }

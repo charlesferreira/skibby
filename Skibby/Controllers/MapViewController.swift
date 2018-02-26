@@ -58,6 +58,15 @@ class MapViewController: UIViewController {
         guard annotations[message.id!] == nil else { return }
         
         let type = annotationType(for: message)
+        
+        // verifica se deve ocultar próprias mensagens
+        let hideOwnMessages = UserDefaults.standard.bool(forKey: Constants.userDefaults.hideOwnMessages)
+        if type == .ownAuthorship && hideOwnMessages { return }
+        
+        // verifica se deve ocultar mensagens coletadas
+        let hideCollected = UserDefaults.standard.bool(forKey: Constants.userDefaults.hideCollectedMessages)
+        if type == .collected && hideCollected { return }
+        
         let annotation = MessageAnnotation(type: type)
         annotation.coordinate = location.coordinate
         mapView.addAnnotation(annotation)

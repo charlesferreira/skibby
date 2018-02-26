@@ -19,11 +19,12 @@ struct Message {
     var text: String
     
     var dictionary: [String: Any?] {
-        let values = [
+        return [
             "senderID": senderID,
+            "hasImage": hasImage,
+            "isNSFW": isNSFW,
             "text": text
         ]
-        return values
     }
     
     static func createFromSnapshot(_ snapshot: DataSnapshot) -> Message {

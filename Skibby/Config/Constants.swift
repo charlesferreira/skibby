@@ -23,8 +23,9 @@ extension Constants {
     
     struct UserDefaults {
         let keyForUID         = "uid"
-        let keyForAllMessages = "allMessages"
         let keyForOwnMessages = "ownMessages"
+        let keyForAllMessages = "allMessages"
+        let keyForNewMessages = "newMessages"
         let showNSFW          = "showNSFW"
         let hideOwnMessages   = "hideOwnMessages"
         let hideCollectedMessages = "hideCollectedMessages"

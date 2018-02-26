@@ -66,9 +66,18 @@ class MessagesViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? ShowMessageController,
+            // prepara a exibição da mensagem
             let indexPath = sender as? IndexPath {
             let messageInfo = self.messageInfo(forRowAt: indexPath)
             controller.messageID = messageInfo.key
+            
+            markAsRead(messageID: messageInfo.key)
+        }
+    }
+    
+    func markAsRead(messageID: String) {
+        if let tabBarController = tabBarController as? TabBarController {
+            tabBarController.markAsRead(messageID: messageID)
         }
     }
 }

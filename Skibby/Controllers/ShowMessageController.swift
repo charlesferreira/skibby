@@ -16,6 +16,11 @@ class ShowMessageController: UIViewController {
     var messageID: String!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
+    
+    func setup() {
         MessagesManager.sharedManager().loadMessage(identifiedBy: messageID) { (message) in
             self.messageLabel.text = message.text
             let showNSFW = UserDefaults.standard.bool(forKey: Constants.userDefaults.showNSFW)
