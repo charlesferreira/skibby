@@ -22,8 +22,10 @@ struct Constants {
 extension Constants {
     
     struct UserDefaults {
-        let keyForUID      = "uid"
-        let keyForMessages = "messages"
+        let keyForUID         = "uid"
+        let keyForAllMessages = "allMessages"
+        let keyForOwnMessages = "ownMessages"
+        let filterNSFW        = "filterNSFW"
     }
     
     struct Location {

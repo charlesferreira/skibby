@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol TabBarControllerDelegate: AnyObject {
+    func tabBar(_ tabBar: TabBarController, didUpdateMessagesBadge badgeValue: String?)
+}
+
 class TabBarController: UITabBarController {
+    
+    weak var customDelegate: TabBarControllerDelegate?
     
     @IBInspectable var initialIndex: Int = 1
     
@@ -20,8 +26,9 @@ class TabBarController: UITabBarController {
     
     func notifyMessageCollected() {
         if let messagesItem = tabBar.items?.first {
-            let collectedMessages = UserManager.sharedManager().newCollectedMessages
-            messagesItem.badgeValue = collectedMessages.count.description
+            let count = UserManager.sharedManager().newCollectedMessages.count
+            messagesItem.badgeValue = count > 0 ? count.description : nil
+            customDelegate?.tabBar(self, didUpdateMessagesBadge: messagesItem.badgeValue)
         }
     }
     

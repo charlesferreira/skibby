@@ -17,6 +17,10 @@ struct Errors {
 
 extension Errors {
     struct Location {
+        var notSet: String {
+            return "Localização ainda não definida"
+        }
+        
         func didFail(with error: Error) -> String {
             return "Erro ao processar localização: \(error)"
         }

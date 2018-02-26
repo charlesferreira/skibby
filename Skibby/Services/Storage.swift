@@ -15,7 +15,8 @@ class FileStore {
         return Static.instance
     }
     
-    let storage: StorageReference
+    private let storage: StorageReference
+    private var cache = (thumbnail: [String: UIImage](), fullSized: [String: UIImage]())
     
     private init() {
         storage = Storage.storage().reference()
@@ -47,4 +48,43 @@ class FileStore {
         }
         
     }
+    
+    func thumbnail(forKey key: String, completion: @escaping ((UIImage?, Error?) -> Void)) {
+        if let image = cache.thumbnail[key] {
+            completion(image, nil)
+        }
+        
+        let path = Constants.storage.messageThumbnailImagePath(forKey: key)
+        let ref = storage.child(path)
+        ref.getData(maxSize: 1 * 1024 * 1024) { [weak self] data, error in
+            if let error = error {
+                self?.cache.thumbnail[key] = #imageLiteral(resourceName: "message-thumbnail-example")
+                completion(nil, error)
+            } else {
+                let image = UIImage(data: data!)
+                self?.cache.thumbnail[key] = image
+                completion(image, nil)
+            }
+        }
+    }
+    
+    func fullSizedImage(forKey key: String, completion: @escaping ((UIImage?, Error?) -> Void)) {
+        if let image = cache.fullSized[key] {
+            completion(image, nil)
+        }
+        
+        let path = Constants.storage.messageFullSizedImagePath(forKey: key)
+        let ref = storage.child(path)
+        ref.getData(maxSize: 1 * 1024 * 1024) { [weak self] data, error in
+            if let error = error {
+                self?.cache.fullSized[key] = #imageLiteral(resourceName: "message-bg-sample")
+                completion(nil, error)
+            } else {
+                let image = UIImage(data: data!)
+                self?.cache.fullSized[key] = image
+                completion(image, nil)
+            }
+        }
+    }
+    
 }

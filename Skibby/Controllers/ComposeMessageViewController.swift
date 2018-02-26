@@ -21,7 +21,7 @@ class ComposeMessageViewController: UIViewController {
     
     let nsfwModel = Nudity()
     
-    var location: CLLocation!
+    var location: CLLocation?
     var hasSelectedImage: Bool!
     
     override func viewDidLoad() {
@@ -30,6 +30,12 @@ class ComposeMessageViewController: UIViewController {
         setUpWarningButton()
         updateSendButton()
         hasSelectedImage = false
+        setupInspiringLabel()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        location = nil
     }
     
     deinit {
@@ -51,6 +57,10 @@ class ComposeMessageViewController: UIViewController {
         // oculta o teclado ao tocar na view
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler))
         view.addGestureRecognizer(tapGesture)
+    }
+    
+    private func setupInspiringLabel() {
+        previewLabel.text = Inspire.random()
     }
     
     @objc private func keyboardWillChangeFrame(_ notification: Notification) {
@@ -78,16 +88,24 @@ class ComposeMessageViewController: UIViewController {
         guard let senderID = UserManager.sharedManager().uid,
             let text = textView.text else { return }
 
+        // grava a mensagem no banco
         let isNSFW = !warningButton.isHidden
         var message = Message(id: nil, senderID: senderID, hasImage: hasSelectedImage, isNSFW: isNSFW, text: text)
-        message.save(at: location)
+        if location == nil {
+            location = GeoManager.sharedManager().location
+        }
+        message.save(at: location!)
         
+        // guarda a mensagem na lista de "mensagens de própria autoria"
+        UserManager.sharedManager().save(newMessage: message)
+        
+        // faz o upload da imagem associada
         if hasSelectedImage, let messageID = message.id {
             let image = backgroundImageView.image!
             FileStore.sharedManager().upload(image: image, forKey: messageID)
         }
 
-        navigationController?.popViewController(animated: true)
+        navigationController?.dismiss(animated: true)
     }
     
     @IBAction func warningTapped(_ sender: Any) {
@@ -96,6 +114,10 @@ class ComposeMessageViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Entendi", style: .cancel, handler: nil))
         
         navigationController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func cancelTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     func updateSendButton() {

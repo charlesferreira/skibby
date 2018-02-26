@@ -39,8 +39,8 @@ extension AppDelegate: GeoFenceDelegate {
         query.observe(.keyEntered) { (key, _) in
             let manager = MessagesManager.sharedManager()
             manager.loadMessage(identifiedBy: key, completion: { [weak self] (message) in
-                UserManager.sharedManager().collect(message)
-                if let controller = self?.window?.rootViewController as? TabBarController {
+                let collected = UserManager.sharedManager().collect(message)
+                if collected, let controller = self?.window?.rootViewController as? TabBarController {
                     controller.notifyMessageCollected()
                 }
             })
